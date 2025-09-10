@@ -6,6 +6,7 @@ vim.pack.add {
     { src = 'https://github.com/folke/which-key.nvim' },
     { src = 'https://github.com/datsfilipe/vesper.nvim' },
     { src = 'https://github.com/nvim-mini/mini.nvim' },
+    { src = 'https://github.com/stevearc/conform.nvim' },
 }
 
 require('mason').setup {}
@@ -26,6 +27,7 @@ require('mini.ai').setup {}
 require('mini.surround').setup {}
 require('mini.comment').setup {}
 require('mini.statusline').setup {}
+require('mini.pairs').setup {}
 require('which-key').setup {
     preset = 'helix'
 }
@@ -77,14 +79,29 @@ require('blink.cmp').setup {
 
 require('snacks').setup {
     picker = { enabled = true },
+    input = { enabled = true },
     -- explorer = { enabled = true },
     dashboard = {
         -- your dashboard configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
-            sections = {
-                { section = "header" },
-                { section = "keys", gap = 0, padding = 1 },
-            },
-    }
+        sections = {
+            { section = "header" },
+            { section = "keys",  gap = 0, padding = 1 },
+        },
+    },
 }
+
+require("conform").setup({
+    formatters_by_ft = {
+        lua = { "stylua" },
+        go = { "gofmt" },
+        ruby = { "rubyfmt" },
+        -- Conform will run multiple formatters sequentially
+        python = { "isort", "black" },
+        -- You can customize some of the format options for the filetype (:help conform.format)
+        rust = { "rustfmt", lsp_format = "fallback" },
+        -- Conform will run the first available formatter
+        javascript = { "prettierd", "prettier", stop_after_first = true },
+    },
+})

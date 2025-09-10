@@ -18,7 +18,8 @@ map("n", "<Leader>w", "<cmd>w!<CR>", { desc = "Write", silent = true }) -- Save 
 map("n", "<Leader>q", "<cmd>q<CR>", { desc = "Quit", silent = true }) -- Quit Neovim
 
 map("n", "<Leader>fo", function()
-    vim.lsp.buf.format()
+    -- vim.lsp.buf.format()
+    require('conform').format()
 end, { desc = "Format file" }) -- Format the current buffer using LSP
 
 map("n", "grd", function()
