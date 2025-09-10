@@ -18,20 +18,20 @@ opt.wrap = false -- Disable line wrapping
 opt.cursorline = true -- Highlight the current line
 opt.scrolloff = 8 -- Keep 8 lines above and below the cursor
 opt.inccommand = "nosplit" -- Shows the effects of a command incrementally in the buffer
-opt.undodir = os.getenv('HOME') .. '/.vim/undodir' -- Directory for undo files
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Directory for undo files
 opt.undofile = true -- Enable persistent undo
 opt.clipboard = "unnamedplus"
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
 }
 -- opt.completeopt = { "menuone", "popup", "noinsert" } -- Options for completion menu
 -- opt.winborder = "rounded" -- Use rounded borders for windows
 -- opt.hlsearch = false -- Disable highlighting of search results
 -- vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
-vim.cmd.colorscheme('vesper')
+vim.cmd.colorscheme("vesper")
