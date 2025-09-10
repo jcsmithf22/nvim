@@ -1,6 +1,6 @@
 vim.pack.add({
-	{ src = "https://github.com/datsfilipe/vesper.nvim" },
-	-- { src = "https://github.com/folke/tokyonight.nvim" },
+	-- { src = "https://github.com/datsfilipe/vesper.nvim" },
+	{ src = "https://github.com/folke/tokyonight.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
@@ -10,19 +10,19 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/conform.nvim" },
 })
 
-require("vesper").setup({
-	transparent = true, -- Boolean: Sets the background to transparent
-	italics = {
-		comments = true, -- Boolean: Italicizes comments
-		keywords = false, -- Boolean: Italicizes keywords
-		functions = false, -- Boolean: Italicizes functions
-		strings = false, -- Boolean: Italicizes strings
-		variables = false, -- Boolean: Italicizes variables
-	},
-	overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
-	palette_overrides = {},
-})
--- require("tokyonight").setup({})
+-- require("vesper").setup({
+-- 	transparent = true, -- Boolean: Sets the background to transparent
+-- 	italics = {
+-- 		comments = true, -- Boolean: Italicizes comments
+-- 		keywords = false, -- Boolean: Italicizes keywords
+-- 		functions = false, -- Boolean: Italicizes functions
+-- 		strings = false, -- Boolean: Italicizes strings
+-- 		variables = false, -- Boolean: Italicizes variables
+-- 	},
+-- 	overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
+-- 	palette_overrides = {},
+-- })
+require("tokyonight").setup({})
 require("mason").setup({})
 require("mini.icons").setup({})
 require("mini.ai").setup({})
