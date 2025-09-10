@@ -1,8 +1,12 @@
 local map = vim.keymap.set
 
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+--
+-- Clear search and stop snippet on escape
+map({ "i", "n", "s" }, "<esc>", function()
+	vim.cmd("noh")
+	-- LazyVim.cmp.actions.snippet_stop() -- I'm not using snippets
+	return "<esc>"
+end, { expr = true, desc = "Escape and Clear hlsearch" })
 
 vim.g.mapleader = " "
 
