@@ -2,7 +2,7 @@ vim.lsp.enable({
 	"bashls",
 	"gopls",
 	"lua_ls",
-	"rby_lsp",
+	"ruby_lsp",
 	"herb_ls",
 	"cssls",
 })
