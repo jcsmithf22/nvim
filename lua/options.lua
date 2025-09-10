@@ -35,7 +35,7 @@ opt.fillchars = {
 -- vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
 -- "vesper" or "tokyonight"
-vim.cmd.colorscheme("vesper")
+vim.cmd.colorscheme("tokyonight-night")
 
 -- local wk = require("which-key")
 -- local icons = require("mini.icons")
