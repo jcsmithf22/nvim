@@ -36,3 +36,17 @@ opt.fillchars = {
 
 -- "vesper" or "tokyonight"
 vim.cmd.colorscheme("vesper")
+
+-- local wk = require("which-key")
+-- local icons = require("mini.icons")
+
+-- wk.add({
+-- 	{
+-- 		mode = { "n" },
+-- 		{
+-- 			"gr",
+-- 			group = "lsp",
+-- 			icon = icons.get("filetype", "xml")
+-- 		},
+-- 	},
+-- })
