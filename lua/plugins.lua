@@ -1,15 +1,15 @@
 vim.pack.add({
+	{ src = "https://github.com/datsfilipe/vesper.nvim" },
+	-- { src = "https://github.com/folke/tokyonight.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
 	{ src = "https://github.com/folke/snacks.nvim" },
 	{ src = "https://github.com/folke/which-key.nvim" },
-	{ src = "https://github.com/datsfilipe/vesper.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
 })
 
-require("mason").setup({})
 require("vesper").setup({
 	transparent = true, -- Boolean: Sets the background to transparent
 	italics = {
@@ -22,6 +22,8 @@ require("vesper").setup({
 	overrides = {}, -- A dictionary of group names, can be a function returning a dictionary or a table.
 	palette_overrides = {},
 })
+-- require("tokyonight").setup({})
+require("mason").setup({})
 require("mini.icons").setup({})
 require("mini.ai").setup({})
 require("mini.surround").setup({})

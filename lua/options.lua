@@ -34,4 +34,5 @@ opt.fillchars = {
 -- opt.hlsearch = false -- Disable highlighting of search results
 -- vim.cmd.filetype("plugin indent on") -- Enable filetype detection, plugins, and indentation
 
+-- "vesper" or "tokyonight"
 vim.cmd.colorscheme("vesper")
