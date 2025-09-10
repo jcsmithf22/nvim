@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.g.mapleader = " "
 
@@ -18,23 +18,43 @@ map("n", "<Leader>w", "<cmd>w!<CR>", { desc = "Write", silent = true }) -- Save 
 map("n", "<Leader>q", "<cmd>q<CR>", { desc = "Quit", silent = true }) -- Quit Neovim
 
 map("n", "<Leader>fo", function()
-    -- vim.lsp.buf.format()
-    require('conform').format()
+	-- vim.lsp.buf.format()
+	require("conform").format()
 end, { desc = "Format file" }) -- Format the current buffer using LSP
 
 map("n", "grd", function()
-    vim.lsp.buf.definition()
+	vim.lsp.buf.definition()
 end, { desc = "vim.lsp.buf.definition()", noremap = true }) -- Go to definition
 -- map("n", "grd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
 map("n", "<leader>ps", function()
-    vim.pack.update()
+	vim.pack.update()
 end, { desc = "Update plugins" })
 
 local snacks = require("snacks")
 
-map( "n", "<leader><space>", function() snacks.picker.smart() end, { desc = "Smart Find Files" })
-map( "n", "<leader>,", function() snacks.picker.buffers() end, { desc = "Buffers" })
-map( "n", "<leader>/", function() snacks.picker.grep() end, { desc = "Grep" })
-map( "n", "<leader>:", function() snacks.picker.command_history() end, { desc = "Command History" })
+map("n", "<leader><space>", function()
+	snacks.picker.smart()
+end, { desc = "Smart Find Files" })
+map("n", "<leader>,", function()
+	snacks.picker.buffers()
+end, { desc = "Buffers" })
+map("n", "<leader>/", function()
+	snacks.picker.grep()
+end, { desc = "Grep" })
+map("n", "<leader>:", function()
+	snacks.picker.command_history()
+end, { desc = "Command History" })
 -- map( "n", "<leader>e", function() snacks.explorer() end, { desc = "File Explorer" })
+
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>bd", function()
+	snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+map("n", "<leader>bo", function()
+	snacks.bufdelete.other()
+end, { desc = "Delete Other Buffers" })
+map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
