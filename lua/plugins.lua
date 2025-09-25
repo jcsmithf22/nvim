@@ -75,14 +75,14 @@ require("blink.cmp").setup({
 			preset = "inherit",
 			["<CR>"] = { "accept_and_enter", "fallback" },
 		},
-		completion = { menu = { auto_show = true } },
+		completion = { menu = { auto_show = false } },
 	},
 })
 
 require("snacks").setup({
 	picker = { enabled = true },
 	input = { enabled = true },
-	-- explorer = { enabled = true },
+	explorer = { enabled = true },
 	dashboard = {
 		-- your dashboard configuration comes here
 		-- or leave it empty to use the default settings
