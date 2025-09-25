@@ -5,6 +5,7 @@ vim.lsp.enable({
 	"ruby_lsp",
 	"herb_ls",
 	"cssls",
+	"clangd",
 })
 
 vim.diagnostic.config({ virtual_text = true })
